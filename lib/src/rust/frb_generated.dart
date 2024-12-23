@@ -326,9 +326,9 @@ class NativeImageCompressApiImpl extends NativeImageCompressApiImplPlatform
   ImageCompress dco_decode_image_compress(dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     final arr = raw as List<dynamic>;
-    if (arr.isNotEmpty)
+    if (arr.length != 0)
       throw Exception('unexpected arr length: expect 0 but see ${arr.length}');
-    return const ImageCompress();
+    return ImageCompress();
   }
 
   @protected
@@ -429,7 +429,7 @@ class NativeImageCompressApiImpl extends NativeImageCompressApiImplPlatform
   @protected
   ImageCompress sse_decode_image_compress(SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
-    return const ImageCompress();
+    return ImageCompress();
   }
 
   @protected
